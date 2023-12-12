@@ -2,25 +2,6 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 const { GraphQLError } = require('graphql');
 
-// const resolvers = {
-//   Query: {
-//     schools: async () => {
-//       // Populate the classes and professor subdocuments when querying for schools
-//       return await School.find({}).populate('classes').populate({
-
-//         path: 'classes',
-//         populate: 'professor'
-//       });
-//     },
-//     classes: async () => {
-//       // Populate the professor subdocument when querying for classes
-//       return await Class.find({}).populate('professor');
-//     },
-//     professors: async () => {
-//       return await Professor.find({});
-//     }
-//   }
-// };
 
 const resolvers = {
   Query: {

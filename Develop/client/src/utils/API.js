@@ -1,3 +1,5 @@
+import { gql } from '@apollo/client';
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch('/api/users/me', {
@@ -7,6 +9,22 @@ export const getMe = (token) => {
     },
   });
 };
+
+export const GET_CURRENT_USER = gql`
+  query GetCurrentUser {
+    currentUser {
+      username
+      email
+      savedBooks {
+        bookId
+        title
+        description
+        image
+        link
+      }
+    }
+  }
+`;
 
 export const createUser = (userData) => {
   return fetch('/api/users', {
